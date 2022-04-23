@@ -85,6 +85,7 @@ module.exports.create = async (body) => {
 module.exports.redirect = async (shortCode) =>{
     try{
         const getShortCode = await utils.getShortCodeData(shortCode)
+        console.log("getShort Code data ", getShortCode )
         if(!getShortCode || getShortCode.error || !getShortCode?.shortCode?.short_code){
             throw new Error("shortCode Data incorrect")
         }
